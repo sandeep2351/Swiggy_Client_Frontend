@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+  font-family: "Lora", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.topbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px; /* Adjust padding as needed */
+  margin-left: -10px; /* Move the TopBar slightly to the left */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: calc(100% - 30px); /* Adjust width to compensate for the margin */
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  height: 60px; /* Define the height of the TopBar */
+}
+.companytitle h2{
+  color:orangered;
+  text-decoration: none;
+}
+.link{
+  text-decoration: none;
+}
+
+
+/* Item Section */
+.itemsection-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 20px; 
+  box-sizing: border-box; 
+}
+
+.itemsection-title {
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 30px;
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-radius: 5px; 
+  z-index: 1; 
+}
+
+.itemsection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 120px; 
+  overflow: hidden;
+}
+
+.gallery-container {
+  display: flex;
+  margin-top: 30px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.gallery {
+  width: 150px; 
+  flex-shrink: 0; 
+  margin-right: 10px; 
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px; 
+}
+
+.navigation-buttons {
+  position: absolute;
+  top: -17px; 
+  right: 20px; 
+  display: flex;
+  margin-right: 40px;
+  gap: 10px;
+  border-radius: 50px;
+  z-index: 2; 
+}
+
+button {
+  background-color: #333; 
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px; 
+  transition: background-color 0.3s; 
+}
+
+button.active {
+  background-color: #007bff; 
+}
+
+button.disabled {
+  background-color: #f1f0f0; 
+  cursor: not-allowed; 
+  color: #666; 
+}
+
+/* Landing page section */
+.landingsection {
+  padding: 0 20px; 
+}
+
+/* Chain Section */
+.chainsection-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 20px; 
+  box-sizing: border-box;
+  margin-top: 50px; /* Ensure enough space from the top */
+}
+
+.chainsection {
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  height: auto;
+}
+
+.vendorbox {
+  display: flex; 
+  margin: 10px;
+  border-radius: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.vendorbox img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
+.chain-navigation-buttons {
+  position: absolute;
+  top: -20px; /* Adjust based on your layout */
+  right: 20px; 
+  display: flex;
+  gap: 10px;
+  z-index: 2; /* Ensure buttons are above other content */
+}
+
+.chain-navigation-buttons button {
+  background-color: #333; 
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px; 
+  transition: background-color 0.3s; 
+}
+
+.chain-navigation-buttons button.active {
+  background-color: #007bff; 
+}
+
+.chain-navigation-buttons button.disabled {
+  background-color: #f1f0f0; 
+  cursor: not-allowed; 
+  color: #666; 
+}
+/*firm section*/
+.firmsection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.firmContainer {
+  position: relative;
+  overflow: hidden; /* Ensure elements don't overflow their containers */
+}
+
+.firmItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.firmImage {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.firmImage img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.firmImage:hover img {
+  transform: scale(1.05); /* Slightly zoom in on hover */
+  filter: brightness(1.2); /* Brighten the image */
+}
+
+.firmImage:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.firmoffer {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, rgba(7, 5, 5, 0.2), black);
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 3;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-transform: uppercase;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade-in effect */
+}
+
+.firmImage:hover .firmoffer {
+  opacity: 1; /* Show the offer text on hover */
+}
+
+.firmdetails {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+
+.firmname {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.firmarea {
+  font-size: small;
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.h31 {
+  margin-left: 22px;
+}
+/*Product section*/
+.Productsection {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 100px 0; /* Padding on top to account for the TopBar */
+  max-width: 1200px;
+  margin-top: 100px; /* Maximum width for better centering */
+}
+
+
+
+/* Container for each product item */
+.ProductBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px; /* Padding inside the box */
+  border-top: 2px solid #f1f1f1; /* Light gray border for top */
+  position: relative;
+  margin: 30px 200px; /* Increased margin for left and right space */
+  background-color: #ffffff; /* White background for product boxes */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Animation for box-shadow and transform */
+}
+
+.ProductBox:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+/* Styling for the product image container */
+.Productgroup {
+  position: relative; /* Required for absolute positioning of the button */
+  display: flex;
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
+  transition: transform 0.3s ease; /* Animation for transform */
+}
+
+.Productgroup:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Product image styling */
+.Productgroup img {
+  width: 120px; /* Set image width */
+  height: 120px; /* Ensure consistent height */
+  object-fit: cover; /* Cover the container */
+  border-radius: 5px; /* Rounded corners for the image */
+  transition: transform 0.3s ease; /* Animation for transform */
+}
+
+/* Styling for the add button */
+.add-button {
+  color: #2d8c2d; /* Green color for the text */
+  background-color: #ffffff; /* White background for button */
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ddd; /* Light border color */
+  position: absolute; /* Absolute positioning for center alignment */
+  bottom:-5px; /* Adjust vertical position from the bottom to move it slightly down */
+  left: 50%; /* Align horizontally to the center */
+  transform: translateX(-50%); /* Center button horizontally */
+  width: auto; /* Adjust width based on content */
+  max-width: 80px; /* Maximum width for the button */
+  padding: 2px 10px; /* Padding inside the button */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; /* Animation for background color */
+}
+
+
+.add-button:hover {
+  background-color: #e6f7e6; /* Light green background on hover */
+}
+
+.plus-symbol {
+  font-size: 16px; /* Font size for the plus symbol */
+  margin-right: 5px; /* Space between plus symbol and text */
+}
+
+.h32 {
+  border: 1px solid black; /* Border for the heading */
+  margin: 40px auto 8px; /* Top margin for spacing, auto for horizontal centering, and bottom margin for spacing */
+  padding: 12px; /* Padding inside the border for better visual appeal */
+  max-width: 60%; /* Maximum width of the heading */
+  text-align: center; /* Center the text inside the heading */
+  background: linear-gradient(135deg, #f78605, #f7a305); /* Gradient background */
+  color: white; /* Text color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+.h32:hover {
+  background: linear-gradient(135deg, #f7a305, #f78605); /* Inverse gradient for hover effect */
+  transform: scale(1.02); /* Slightly enlarge the heading on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .h32 {
+    max-width: 80%; /* Increase max-width on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .h32 {
+    max-width: 90%; /* Further increase max-width on very small screens */
+    font-size: 18px; /* Adjust font size for very small screens */
+    padding: 8px; /* Adjust padding for very small screens */
+  }
+}
+
+.filterbuttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-bottom: 10px;
+  margin-left: 25px; /* Space below filter buttons */
+}
+
+.filterbuttons button {
+  background-color: #f5f5f5; /* Light gray background */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 6px 12px; /* Padding inside button */
+  font-size: 16px; /* Font size */
+  color: #333; /* Dark text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.filterbuttons button:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+  color: #000; /* Darker text color on hover */
+}
+
+.filterbuttons button.active {
+  background-color: #2d8c2d; /* Green background for active button */
+  color: #fff; /* White text color for active button */
+  border: 1px solid #2d8c2d; /* Green border for active button */
+}
+
+/*loadersection*/
+.loadingsection {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+.searchbar{
+  width:300px;
+  height: 30px;
+  border-radius: 10px;
+}
